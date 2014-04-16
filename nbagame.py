@@ -73,7 +73,9 @@ class NBAgame(object):
 		xmisseds = [self.xshots[j] for j in misseds]
 		ymisseds = [self.yshots[j] for j in misseds]
 
-		datafile = cbook.get_sample_data('/Users/Martin/anaconda/NBA/bucksnewcourthalf.jpg')
+		courtfn = '/Users/Martin/anaconda/NBA/halfcourts/' + (self.hteam).lower() + '_halfcourt.jpg'
+
+		datafile = cbook.get_sample_data(courtfn)
 		img = misc.imread(datafile)
 		miss = plt.scatter(xmisseds, ymisseds, marker='x', c='r', s=40, zorder=2)
 		make = plt.scatter(xmades, ymades, marker='o', c='g', s=100, zorder=1)
@@ -116,7 +118,9 @@ class NBAgame(object):
 		xmisseds = [self.xshotsteam[j] for j in misseds]
 		ymisseds = [self.yshotsteam[j] for j in misseds]
 
-		datafile = cbook.get_sample_data('/Users/Martin/anaconda/NBA/bucksnewcourthalf.jpg')
+		courtfn = '/Users/Martin/anaconda/NBA/halfcourts/' + (self.hteam).lower() + '_halfcourt.jpg'
+
+		datafile = cbook.get_sample_data(courtfn)
 		img = misc.imread(datafile)
 		miss = plt.scatter(xmisseds, ymisseds, marker='x', c='r', s=40, zorder=2)
 		make = plt.scatter(xmades, ymades, marker='o', c='g', s=100, zorder=1)
@@ -159,7 +163,9 @@ class NBAgame(object):
 		xmisseds = [self.xshotsplayer[j] for j in misseds]
 		ymisseds = [self.yshotsplayer[j] for j in misseds]
 
-		datafile = cbook.get_sample_data('/Users/Martin/anaconda/NBA/bucksnewcourthalf.jpg')
+		courtfn = '/Users/Martin/anaconda/NBA/halfcourts/' + (self.hteam).lower() + '_halfcourt.jpg'
+
+		datafile = cbook.get_sample_data(courtfn)
 		img = misc.imread(datafile)
 		miss = plt.scatter(xmisseds, ymisseds, marker='x', c='r', s=40, zorder=2)
 		make = plt.scatter(xmades, ymades, marker='o', c='g', s=100, zorder=1)
