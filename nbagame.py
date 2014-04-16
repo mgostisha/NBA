@@ -81,6 +81,8 @@ class NBAgame(object):
 		make = plt.scatter(xmades, ymades, marker='o', c='g', s=100, zorder=1)
 		plt.imshow(img, zorder=0, extent=[0.0, 50.0, 0.0, 47.0])
 		plt.legend((make, miss), ('Make', 'Miss'), scatterpoints=1, loc='upper right', ncol=1, fontsize=10)
+		plt.xticks([])
+		plt.yticks([])
 		plt.show()
 		plt.title(self.ateam + '@' + self.hteam + ' on ' + self.date)
 
@@ -126,6 +128,8 @@ class NBAgame(object):
 		make = plt.scatter(xmades, ymades, marker='o', c='g', s=100, zorder=1)
 		plt.imshow(img, zorder=0, extent=[0.0, 50.0, 0.0, 47.0])
 		plt.legend((make, miss), ('Make', 'Miss'), scatterpoints=1, loc='upper right', ncol=1, fontsize=10)
+		plt.xticks([])
+		plt.yticks([])
 		plt.show()
 		plt.title(teamcode + ' - ' + self.ateam + '@' + self.hteam + ' on ' + self.date)
 
@@ -171,6 +175,8 @@ class NBAgame(object):
 		make = plt.scatter(xmades, ymades, marker='o', c='g', s=100, zorder=1)
 		plt.imshow(img, zorder=0, extent=[0.0, 50.0, 0.0, 47.0])
 		plt.legend((make, miss), ('Make', 'Miss'), scatterpoints=1, loc='upper right', ncol=1, fontsize=10)
+		plt.xticks([])
+		plt.yticks([])
 		plt.show()
 		plt.title(shooter + ' - ' + self.ateam + '@' + self.hteam + ' on ' + self.date)
 
