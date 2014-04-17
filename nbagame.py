@@ -189,7 +189,7 @@ class NBAgame(object):
 		shots = []
 		madeshots = []
 		missshots = []
-		xbinwidths = range(0, 51, 2)
+		binwidths = range(0, 51, 2)
 
 		for play in self.gamearr:
 			r = 0
