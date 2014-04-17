@@ -1,7 +1,9 @@
 import numpy
+import math
 import matplotlib.pyplot as plt
 import scipy.misc as misc
 import matplotlib.cbook as cbook
+import matplotlib.colors as colors
 
 class NBAgame(object):
 
@@ -182,17 +184,47 @@ class NBAgame(object):
 
 		print len(xmades)+len(xmisseds)
 
+	def shotHistogram(self):
 
+		shots = []
+		madeshots = []
+		missshots = []
+		xbinwidths = range(0, 51, 2)
 
+		for play in self.gamearr:
+			r = 0
+			if (play[self.etype] == 'shot'):
+				x = math.fabs(25.0 - float(play[self.x]))
+				y = math.fabs(5.25 - float(play[self.y]))
+				r = numpy.sqrt(x**2 + y**2)
+				shots.append(r)
 
+				if (play[self.result] == 'made'):
+					madeshots.append(r)
+				else:
+					missshots.append(r)
 
+		#plt.hist(shots, bins=binwidths, histtype='step', color='b', label='Total Shots')
+		#plt.hist(madeshots, bins=binwidths, histtype='stepfilled', color='g', alpha=0.5, label='Shots Made')
+		plt.hist([madeshots, missshots], bins=binwidths, histtype='stepfilled', stacked=True,
+			label=('Shots Made', 'Shots Missed'), color=('#75C34B', '#C45B4F'))
+		plt.title('Shot Distances')
+		plt.xlabel('Shot Distance from Basket')
+		plt.ylabel('Total Shots')
+		plt.legend()
 
+	def shotHistogram2D(self):
 
+		xshots = []
+		yshots = []
+		xbinwidths = range(0,51,2)
+		ybinwidths = range(0,47,2)
 
+		for play in self.gamearr:
+			if(play[self.etype] == 'shot'):
+				xshots.append(float(play[self.x]))
+				yshots.append(float(play[self.y]))
 
-
-
-
-
-
+		plt.hist2d(xshots, yshots, bins=[xbinwidths,ybinwidths], cmax=20)
+		plt.colorbar()
 
